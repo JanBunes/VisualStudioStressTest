@@ -6,7 +6,7 @@ Run with Visual Studio and Gtest adapter settings for parallel test execution (a
 
 ![image](https://user-images.githubusercontent.com/2736196/180735797-756aef4c-dbaf-4066-a5dd-7f21fb056f26.png)
 
-After multiple attempts a test execution error will occur such as:
+The issue appears intermittent so is difficult to reproduce reliably, but after multiple attempts of running the test suite (<10 minutes of attempts) a test execution error may occur such as:
 ```
 ========== Starting test run ==========
 Visual Studio version: VS2022
