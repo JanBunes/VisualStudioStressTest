@@ -7,7 +7,7 @@ Run with Visual Studio and Gtest adapter settings for parallel test execution (a
 ![image](https://user-images.githubusercontent.com/2736196/180735797-756aef4c-dbaf-4066-a5dd-7f21fb056f26.png)
 
 After multiple attempts a test execution error will occur such as:
-
+```
 ========== Starting test run ==========
 Visual Studio version: VS2022
 Test Adapter for Google Test: Test execution starting…
@@ -55,5 +55,5 @@ at GoogleTestAdapter.Runners.ParallelTestRunner.RunTests(IEnumerable1 testCasesT
 at GoogleTestAdapter.TestAdapter.TestExecutor.DoRunTests(ICollection1 testCasesToRun, IRunContext runContext, IFrameworkHandle frameworkHandle)    at GoogleTestAdapter.TestAdapter.TestExecutor.TryRunTests(IEnumerable1 vsTestCasesToRun, IRunContext runContext, IFrameworkHandle frameworkHandle)
 at GoogleTestAdapter.TestAdapter.TestExecutor.RunTests(IEnumerable`1 vsTestCasesToRun, IRunContext runContext, IFrameworkHandle frameworkHandle)
 ========== Test run finished: 0 Tests (0 Passed, 0 Failed, 0 Skipped) run in 120 ms ==========
-
+```
 
