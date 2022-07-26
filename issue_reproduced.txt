@@ -1,0 +1,32 @@
+Opening the stress test project:
+
+-it has been previously built..
+-test discovered
+
+Now to run tests.. interestingly we get 1 error straight away..
+
+(previous capture attempts this morning I had no errors trying to reproduce the issue)
+
+Will wait until the test run completes to see what error it is..
+
+
+So this is the error where a significant number of tests do not get run..
+
+================
+The following errors and warnings have occured during test execution :
+ERROR: [T15] Exception while running tests: System.ArgumentException: An item with the same key has already been added.
+   at System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   at GoogleTestAdapter.TestAdapter.Settings.TestPropertySettingsContainer.EnsureTestPropertiesMap()
+   at GoogleTestAdapter.TestAdapter.Settings.TestPropertySettingsContainer.TryGetSettings(String testName, ITestPropertySettings& settings)
+   at GoogleTestAdapter.Runners.SequentialTestRunner.<>c__DisplayClass9_1.<RunTests>b__0()
+   at GoogleTestAdapter.Settings.SettingsWrapper.ExecuteWithSettingsForExecutable(String executable, Action action, ILogger logger)
+   at GoogleTestAdapter.Runners.SequentialTestRunner.RunTests(IEnumerable`1 testCasesToRun, String baseDir, String workingDir, String userParameters, Boolean isBeingDebugged, IDebuggedProcessLauncher debuggedLauncher, IProcessExecutor executor)
+   at GoogleTestAdapter.Runners.PreparingTestRunner.RunTests(IEnumerable`1 testCasesToRun, String baseDir, String workingDir, String userParameters, Boolean isBeingDebugged, IDebuggedProcessLauncher debuggedLauncher, IProcessExecutor executor)
+========== Test run finished: 7643 Tests (7643 Passed, 0 Failed, 0 Skipped) run in 2.7 min ==========
+
+
+An item with the same key has already been added.
+
+
+Recording will end.. will add to ticket.
