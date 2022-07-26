@@ -18,3 +18,39 @@ This is a class of error seen before:
 ERROR: [T17] Exception while running tests: System.IO.IOException: The file exists.
 
 I believe that cleaning the temp folder will resolve this, but going to submit this as an issue in the current state.
+
+
+
+============================
+Part 2
+============================
+
+Testing out the theory that cleaning temp folder will resolve this particular issue.  
+Note: this issue will be observed in any unit test project at the moment.
+
+First - verify the issue again.
+
+Steps:
+-Run unit tests
+-Actually this is showing an instance of "the other issue" described in bug 1: ERROR: [T14] Exception while running tests: System.ArgumentException: An item with the same key has already been added.
+-Expectation is that there will be a 25+ error soon..
+-So now we see 25 errors
+-ERROR: [T08] Exception while running tests: System.IO.IOException: The file exists.
+
+Next - see if cleaning %TEMP% folder resolves this isssue..
+
+Steps:
+-just running this script cleanTMPfiles.bat to clean the %TEMP% folder
+-so it will delete most of what is in %TEMP%.. some programs still locking files.
+-Now see if we can run unit tests...
+-Unit tests are running, so far we have another instance of bug1, but the rest looks like it will work
+
+So not all the tests are run.. but we conclude:
+-Cleaning %TEMP% has resolved the issue of "not being able to run any tests in any instance of IDE or project"
+-We have an instance of bug1 (a separate ticket), leaving 307 tests not complete.
+
+This data will be added to the relevant ticket with screen share.
+
+
+
+
