@@ -1,0 +1,20 @@
+Main development project is failing to properly execute tests again.. trying to explore with the stress test project.
+
+Steps:
+-rebuild all
+-does not seem to want to rebuild..
+
+-rebuild didn't work, but clean then build has.
+-test explorer is discovering..
+-run tests
+
+This is what my Development project was doing.  Run tests seem to do ...nothing.
+
+Ohh.. after timeout we get 25 errors!
+possibly one error per thread, this CPU has 24 hardware threads.
+
+
+This is a class of error seen before:
+ERROR: [T17] Exception while running tests: System.IO.IOException: The file exists.
+
+I believe that cleaning the temp folder will resolve this, but going to submit this as an issue in the current state.
